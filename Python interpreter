@@ -1,0 +1,30 @@
+Python is primarily an interpreted language, but it also has elements of compilation in its execution process. Let’s break it down:
+
+How Python Works:
+Source Code to Bytecode (Compilation Phase):
+
+When you run a Python script, the Python interpreter first compiles the source code (.py files) into an intermediate format called bytecode.
+This bytecode is a platform-independent, low-level representation of the code.
+The bytecode is stored temporarily in memory or as a .pyc file (in the __pycache__ directory) for future use.
+Bytecode Execution (Interpretation Phase):
+
+The compiled bytecode is executed by the Python Virtual Machine (PVM), which is the interpreter.
+The PVM translates bytecode into machine code specific to the host system and executes it.
+Why is Python Considered Interpreted?
+Python executes the bytecode using an interpreter (PVM) at runtime, which gives it its interpreted nature.
+You do not need to manually compile Python code; the compilation to bytecode happens automatically and transparently.
+Key Characteristics:
+No Explicit Compilation:
+
+Unlike languages like C or Java, where you compile code manually, Python handles the compilation internally.
+Platform Independence:
+
+Python’s bytecode can run on any system with a compatible Python interpreter, making it cross-platform.
+Dynamic Typing:
+
+Python determines variable types at runtime, a feature typically associated with interpreted languages.
+Comparison with Compiled Languages:
+Aspect	Compiled Languages (e.g., C)	Interpreted Languages (e.g., Python)
+Execution Speed	Faster	Slower (due to runtime interpretation)
+Compilation Step	Manual (source to machine code)	Automatic (source to bytecode)
+Portability	Limited to compiled platform	Highly portable (via interpreter)
