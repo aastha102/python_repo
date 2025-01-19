@@ -13,15 +13,16 @@
 # For any repetetive task- we require looping
 # 
 
+# Program to print number from 1 to 100
 i=1 # this will execute only 1 time at the time of initialization.
-# line no. 21 to 23 process goes till the condition is false
+# line no. 22 to 24 process goes till the condition is false
 # if condition is false then immidiatally it will terminate loop
 
 # here value is 1
-while i<=100: # exit condition of loop
+while i<=100: # initially i=0 exit condition of loop
     print(i)
-    i=i+1 
-# line 22 to 23 called body of loop
+    i=i+1 # i vlaue is incremented by 1 everytime i+=1 or i++
+# line 23 to 24 (above 2 lines) called body of loop
 
 # printing even number
 # f stream function is used to combine statement with variables
@@ -67,7 +68,7 @@ while (count < 3):
     if count == 2:
         break
     print("while loop body")
-print("Outside loop")
+print("Outside loop") # this will always execute whether loop breaks or not
     
 # for Loops are used for iterating over a sequence like lists, tuples, strings, and ranges.
 
@@ -81,7 +82,8 @@ print("Outside loop")
 #     # pass
 
 # Using range() with For Loop
-# The range() function is commonly used with for loops to generate a sequence of numbers. It can take one, two, or three arguments:
+# The range() function is commonly used with for loops to generate a sequence of numbers. 
+# It can take one, two, or three arguments:
 
 # range(stop): Generates numbers from 0 to stop-1.
 # range(start, stop): Generates numbers from start to stop-1.
@@ -98,5 +100,29 @@ for i in range(1, 10):
     if i%2!=0:
         print(f"Odd number {i}, {i*3}")
 
+for i in range(100):
+    print(i) # printing value from 1 to 99
+    # we have given only stop value, start value is 1 by default, step is 1 by default
 
     
+
+for num in range(5):
+    if num == 3:
+        print("Found 3!")
+        break
+else:
+    print("Loop completed without finding 3.")
+# If 3 is found, the loop ends with break, and the else block does not execute.
+# If 3 is not found, the else block executes.
+
+#Using break to exit the loop 
+
+for i in range(10): 
+    if i == 5:
+        break
+    print(i) 
+      
+for i in range(10):
+    if i % 2 == 0:
+        continue 
+    print(i)

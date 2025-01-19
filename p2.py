@@ -13,7 +13,7 @@
 age=9 # declaring of variable
 # it will execute the condition if the evaluated condition is true
 # if the condition is false, it will do nothing
-# proper is required so compiler know that it is block of if statement
+# proper indentation is required so interpreter will get to know that it is block of if statement
 if age>18:
     print("You are eligible")
 
@@ -69,14 +69,14 @@ print("You are eligible") if age>20 else print("You are not eligible")
     # code to execute if none of the above conditions are true
  
 # # If converting data from str to int or float it must be stored to some variable
-# age=int(input("Enter your age"))
+age=int(input("Enter your age"))
 
-# if age>20 and age<100: # Checking age from 21 to 99 
-#    print("You are eligible")
-# elif age<=20: # we are checking age from 1 to 20 includes 20 also
-#    print("You are not eligible")
-# else:
-#    print("You are not part of it")
+if age>20 and age<100: # Checking age from 21 to 99 
+   print("You are eligible")
+elif age<=20: # we are checking age from 1 to 20 includes 20 also
+   print("You are not eligible")
+else:
+   print("You are not part of it")
 
 
 # #[Note: For indentation- The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.]
@@ -107,10 +107,12 @@ print("You are eligible") if age>20 else print("You are not eligible")
 #    print("You have wrong output")
 
 # Play rules
+#school name should be kv
 # if the age group is 1 to 10- You can take ludo, chess
 # 10-20- basket ball, volleyball
 # 20- 30 - anygame
 # if exceeds 30- you are not eligible
+
 
 school_name=input("enter your school name")   
 age=int(input("enter your age:"))
@@ -124,6 +126,8 @@ if school_name=="kv": # if yopu have kv means you can enter inside it. " # 18 ==
         print("you can take ludo,chess")
     elif age>10 and age<20:
         print("you can take basket ball")
+    elif age>20 and age<30:
+        print("any game")
     else:
         print("none")
 # else:
@@ -133,11 +137,32 @@ else:
 
 # ask school name from user and if school_name is kv then ask age from user and then do futher operation if school_name is something else - you are not part of school
 
-
-
-
-
-
-
 # Nested if..else Conditional Statements
 # Nested if..else means an if-else statement inside another if statement. We can use nested if statements to check conditions within conditions.
+
+age = 25
+gender ="female"
+if gender=="female":
+    if age <= 12:
+        print("Child.")
+    elif age <= 19:
+        print("Teenager.")
+    elif age <= 35:
+        print("Young adult.")
+    else:
+        print("Adult.")
+else:
+    print("none")
+
+age = 70
+is_member = True
+# True value means always true condition- if block executes
+# False value means always false condtion - else block executes
+
+if age >= 60:
+    if is_member:
+        print("30% senior discount!")
+    else:
+        print("20% senior discount.")
+else:
+    print("Not eligible for a senior discount.")
