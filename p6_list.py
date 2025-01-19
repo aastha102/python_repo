@@ -46,16 +46,20 @@ print(lst2[3][3]) # op- ['free', True, 80, [10]] Now traverse in this list
 # indexing - 0 index- 'free', 1 index- True, 2 index- 80, 3 index-[10] # this also sublist which has only one value 0 index-10
 print(lst2[3][3][2]) # op- 80
 print(lst2[3][3][3][0]) # 10
-
+print("#" * 9)
+lst2=[20, 30, 50, [77, 20, 60.8, ['free', True, 80,[10]]] ]
+print(len(lst2))
+for item in lst2:
+    print(item)
 # Accessing list item of nested list
 # No. of sub lists = no. of loops & loop-1 = if else condition
-for item in lst2:
+for item in lst2: # 20, 30, 50, [77, 20, 60.8, ['free', True, 80, [10]]]
     if type(item) == list:  # Check if the item is a list
-        for sub_item in item:
+        for sub_item in item: # 77, 20, 60.8, ['free', True, 80, [10]]
             if type(sub_item) == list:  # Check if sub_item is a list
-                for sub_sub_item in sub_item:
+                for sub_sub_item in sub_item: # 'free', True, 80, [10]
                     if type(sub_sub_item) == list:  # Check if sub_sub_item is a list
-                        for sub_sub_sub_item in sub_sub_item:
+                        for sub_sub_sub_item in sub_sub_item: # 10
                             print(sub_sub_sub_item, end=" ")
                     else:
                         print(sub_sub_item, end=" ")
@@ -63,6 +67,7 @@ for item in lst2:
                 print(sub_item, end=" ")
     else:
         print(item, end= " ")
+
 
 
 lst=[10, 20, 30, 40, 'True', 'pet', True]
@@ -106,6 +111,7 @@ l.pop(2)
 # l.remove(9) # error if value not present
 print(l)
 l.remove(60) # value is present in list, it will remove that element
+l.remove(70.6)
 # if duplicate value is present it will remove the first occurence of value
 print(l)
 l.clear() # op- []  It removes elements from the list
@@ -116,7 +122,7 @@ print(l2)
 # Functions of list-
 
 lst_fun=[10, 20, 30, 80, 30, 50]
-# count(value) - Returns the count of occurrences of x.
+# count(value) - Returns the count of occurrences of value.
 print(lst_fun.count(30)) 
 
 # Sorting and Reversing
@@ -142,26 +148,30 @@ print(lst2)
 # Concatenation/ Merging - Adding one list to another list like append function
 lst1=[10, 20, 30, 40]
 lst2=[10]
-lst3=lst1+lst2
+lst3=lst1+lst2 # op- [10, 20, 30, 40, 10]
 print(lst3)
 
 # Muliplication / Replicating
-lst3=lst1*3
+lst3=lst1*3 # op-[10, 20, 30, 40, 10, 20, 30 ,40, 10, 20, 30, 40]
 print(lst3)
-
+lst1=[10, 20, 30, 50]
+lst2=[10, 20, 30, 50]
+lst3=lst2
+print(id(lst1), id(lst2), id(lst3))
 # Memebership Operator
 print(20 in lst) # return boolean value - True or False
-print(lst1 is lst2) # comparing memory location
+print("lst1 and lst2 is: ", lst1 is lst2) # comparing memory location
+print(lst2 is lst3)
 
 # zip function - both list should contain same elements - Pair up tupe
-lst1=[5, 12, 15, 7]
+lst1=[5, 12, 15, 7, 30] # if extra element is there it will not consider that element
 lst2=[14,5,7,90]
 print(list(zip(lst1,lst2)))
 print(tuple(zip(lst1, lst2))) 
 
 lst3=[]
 
-for i,j in zip(lst1,lst2):
+for i,j in zip(lst1,lst2): # i is for lst1 and j is for lst2
     lst3.append(i+j)
 
 print(lst3)
@@ -175,8 +185,8 @@ for i, j in zip(lst1, lst2):
 # any and all function
 lst=[10, 20, 30, -40, -50]
 # using function
-print(all([i>0 for i in lst]))
-print(any([i>0 for i in lst]))
+print(all([i>0 for i in lst])) # all should be true then it returns otherwise false
+print(any([i>0 for i in lst])) # if any one condition is true it reurn True otherwise false
 def any(lst):
     for i in lst:
         if i > 0:
@@ -205,53 +215,37 @@ print(any([x>35 for x in marks ]))
 # condition (optional): A filter to include only certain items.
 
 lst4=[x for x in range(1, 10)]
+lst=[]
+for x in range(1, 10):
+    lst.append(x)
 print(lst4)
 print([x*x for x in range(1, 11)])
+# 1 2 3 4 5 6 7 8 9
 evens = [x for x in range(10) if x % 2 == 0]
 print(evens)
 pairs = [(x, y) for x in range(3) for y in range(3)]
+
+lst_pair=[]
+for x in range(0,3): 
+    for y in range(0, 3): # when x value is 0 y=0-> x= 0 y=1-> x=0, y=2-> x=11, y=0-> x=1, y=1-> x=1, y=2 -> x=2, y=0, x=2, y=1, x=2, y=2
+        lst_pair.append((x,y))
+        
 print(pairs)  # Op: [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
 numbers = [x if x % 2 == 0 else "Odd" for x in range(5)]
+# op["odd", 2, "odd", "odd", 4]
 print(numbers)
 
+for i in range(1, 5):
+    for j in range(1,5):
+        print(i, j)
+# execution  starts from outer loop then will go to inner loop
+# once the inner loop is completed then it will go to outer loop again then again enter loop
+# step1- i=1 -> j goes from 1, 2, 3, 4 once inner loop is completed then it will increment the value of i (outer loop)
+# step2 - i=2 -> j goes from 1, 2, 3, 4
+# step 3 - i=3 -> j goes from 1, 2, 3, 4
+# step 4 - i=4 -> j goes from 1, 2, 3, 4
 
 
-
-# # # Program to print 
-# # print("user")
-# # user=int(input("Enter the number:"))
-# # lst=[]# empty list
-# # for i in range(user):
-# #     lst.append(i**2)
-# # print(lst)
-# # lst=[20, 30, 40, 70, 70, 90, 10]
-# # lst1=[]
-# # lst1=[20, 30, 40, 70, 90, 10]
-
-# # for i in lst:
-# #     if i not in lst1: #50 not in lst1
-# #         lst1.append(i)
-
-# lst=[10, 20, 30, 50, 50, 70, 90, 50, 70, 90]
-# lst1=[] #
-# for i in lst:
-#     if i not in lst1: # if i is not present in lst1 then only append data means i to lst1
-#         lst1.append(i)
-# # step i value is 10
-# # now checking in our newlist if value is already present in new list
-# lst1=[] # initially it is empty
-# #if 10 is not present in lst1:
-#     #then add that data into lst1
-# # then will move to 20 , 30, 50
-# lst1=[10, 20, 30, 50, 70, 90]
-# # now 50 not in lst1 -> 
-# # now i- value =50 if 50 not in lst1:
-
-# # sum all the data of the list and 
-# # "The sum of all the list data is sum_value"
-# sum=0# initally value of sum is 0
-# for i in lst1:
-#     sum=sum+i
 
 
 
