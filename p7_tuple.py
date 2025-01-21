@@ -48,4 +48,10 @@ print(min(c))
 for i in tup:
     print(i)
 
+tup1=([10, 20, 30], [40, 50, 60], [60, 70])
+print(len(tup1)) 
+tup1[0].append(90) # Here u won't get any error coz we are not increasing the length instead adding into list i.e oth index
+tup1.append(90) # u will get error coz we can increase the length of existing tuple
+print(tup1, len(tup1))
+
 
