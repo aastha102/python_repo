@@ -135,8 +135,13 @@ print(lst_fun)
 
 # Copying list
 lst=[10, 20, 30, 80]
-lst2=lst.copy() # Returns a shallow copy of the list.
-print(lst2)
+print(lst, id(lst))
+lst2=lst.copy() # Returns a deep copy means elements are copied not referenced, both has different id
+print("Deep Copy", lst2, id(lst2))
+lst3=lst # It's a shallow copy means both has same id.
+print("Shallow Copy", lst3, id(lst3))
+lst4=lst[:]
+print("Deep Copy", lst4, id(lst4))
 
 # len(lst)	Returns the length (number of elements).	len(lst)
 # max(lst)	Returns the maximum element.	max(lst)
@@ -244,9 +249,6 @@ for i in range(1, 5):
 # step2 - i=2 -> j goes from 1, 2, 3, 4
 # step 3 - i=3 -> j goes from 1, 2, 3, 4
 # step 4 - i=4 -> j goes from 1, 2, 3, 4
-
-
-
 
 
 
