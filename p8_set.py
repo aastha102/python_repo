@@ -60,13 +60,14 @@ s2={50, 55, 60 , 65}
 s2=s2^s1
 print(s2)
 s2=s2.symmetric_difference(s1)
-print(s2) # Either x or y but not in both , It will include not common elements
+print(s2) # Either 1st set elements or 2nd set elements but not in both , It will include not common elements
+print(s2.symmetric_difference(s1))
 
 s1={10, 20, 30, 40, 50, 80, 70}
 s2={50, 55, 60 , 65, 77, 90}
 # symmetric_difference_update() does not return a value; it updates the set s2 in place and returns None.
-s5=s2.symmetric_difference_update(s1)
-print(s5) # op-None
+# s5=s2.symmetric_difference_update(s1)
+# print(s5) # op-None
 s2.symmetric_difference_update(s1)
 print(s2)
 
@@ -75,7 +76,7 @@ s2 = {10, 20, 30, 40}
 
 print(s1.issubset(s2))  # True (s1 is a subset of s2)
 print(s2.issuperset(s1))  # True (s2 is a superset of s1)
-print(s1.isdisjoint({50, 60}))  # True (no common elements)
+print(s1.isdisjoint({10, 60}))  # True (no common elements) # both have null intersection-> True otherwise false
 
 # Frozen Set
 # It is an immutable version of a set.
