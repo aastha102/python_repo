@@ -233,6 +233,10 @@ print(r1, r2, r3)
 
 '''--------------------------------------------------------------------------------------------------------------------------------'''
 
+# if __name__== '__main__':
+#     main()
+#  it will check main function if it is present then it will execute function from import module which is called under main()
+#   
 
 
 
