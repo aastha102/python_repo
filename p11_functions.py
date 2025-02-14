@@ -200,8 +200,8 @@ print(list(map(lambda x:x**2, lst)))
 def func1(num):
     return lambda x: x*num
 # print(func1(2)(5)) # 2 is argument for func1 and (5) is calling lambda function
-func2=func1(2)
-print(func2(5))
+func2=func1(2) # num =2
+print(func2(5)) # x=3
 
 def func3(num):
     return lambda x:x*num
@@ -229,7 +229,7 @@ print(res) # tuple will get as output
 
 # unpacking of tuple
 r1, r2, r3=res 
-print(r1, r2, r3)
+print(r1, r2)
 
 '''--------------------------------------------------------------------------------------------------------------------------------'''
 
