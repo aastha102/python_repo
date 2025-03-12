@@ -1,0 +1,6 @@
+This text file is open in write mode for writing data to the file.If python_data.txt exists, it will be overwritten. If not, a new file will be created.writelines()-Writes a list of strings to a file.
+ Used to write multiple lines at once.
+ Takes a list of strings and writes them to the file 
+ Used to write a single string to a file. 
+ Overwrites existing content if the file is opened in write mode ('w') 
+ Appends content if opened in append mode ('a').
