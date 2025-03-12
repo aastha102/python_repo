@@ -11,9 +11,9 @@ from functools import reduce
 # without input without output
 
 def mul(): # defination of the function
-    a=10 # line 6 to 8 body/statements of the function
-    b=20
-    print(a*b)
+   a=10 # line 6 to 8 body/statements of the function
+   b=20
+   print(a*b)
 
 print(mul()) # None # Calling of function 
 # If we print userdefined function inside print statement, will get output if function returns value will get that value, or else by default None
@@ -90,7 +90,7 @@ topping_p("Air", " bottle", chrust="Liquid") # calling topping_o function
 # topping_p("Air", " bottle", water="Liquid") # error- coz no paramter water is used in function defination of topping_p
 
 # [Note: Either keyword or default argument used when we use 2nd parameter in function defination with variable length arguments.
-# Variable length argument must be last parameter, while passing keyword argument it must be at last]
+# Variable length argument must be firsst parameter, while passing keyword argument it must be at last]
 
 
 # Variable keyword length arguments
