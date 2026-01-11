@@ -5,21 +5,22 @@ import collections
 # 1. Counter - A Counter is a dictionary subclass used for counting hashable objects.
 # Counting occurrences of items in a iterators) like list or string.
 lst=['a', 'a', 'b', 'c', 'd', 'd']
-c="aaabbbaccbddd"
-print(Counter(lst))
+c="aaabbbaccbdddd"
+print(Counter(lst)) 
 dict=Counter(c)
 print(type(dict))
 print(dict.values())
 print(dict.most_common(1)) # 1st most common character [('a', 4)], for 2nd most common (2)
-print(dict.most_common(1)[0]) #('a', 4) coz it is present in 0th index of collection
+print(dict.most_common(2)[0]) #('a', 4) coz it is present in 0th index of collection
 print(dict.most_common(1)[0][0])  
 print(list(dict.elements()))
 
 # Without using counter
+lst1=[]
 d={} # empty dictionary
 for i in lst: # ['a', 'a', 'b', 'c', 'd', 'd'] # checking a
-    if i not in d:# 
-        d[i]=1 #d[a]=1 d[key]=value # 2nd iter a 
+    if i not in d:#lst1 
+        d[i]=1 #d[a]=1 d[key]=value # 2nd iter a  d['a']=1  ->d={'a':2, 'b':1} d['a']=1+1=2
     else:
         d[i]+=1 #1+1
 print(d)
@@ -28,6 +29,8 @@ print(d)
 d1={'a':1, 'b':2}
 d2={'c':3, 'd':4}
 d3={'e':5, 'f':6}
+
+
 
 d4={**d1, **d2, **d3} 
 print(d4)
