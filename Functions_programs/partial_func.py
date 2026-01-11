@@ -8,6 +8,7 @@ from functools import partial
 def multiply(x, y):
     return x*y
 
+# mulitply(10,20)
 mul=partial(multiply,x=2) # multiply 2, y=5 i.e x is fixed coz bydefault it takes 1st one if it is positional argument
 # print(mul(y=5)) 
 # # print(mul(3,5)) # multiple value for x
