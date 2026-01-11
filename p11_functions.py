@@ -8,14 +8,15 @@ from functools import reduce
 #     Body of function
 # mul() # calling of function # outside of function
 
-# without input without output
+# without input without output 
 
 def mul(): # defination of the function
    a=10 # line 6 to 8 body/statements of the function
    b=20
    print(a*b)
+mul() # output 200
 
-print(mul()) # None # Calling of function 
+print(mul()) #200 # None # Calling of function 
 # If we print userdefined function inside print statement, will get output if function returns value will get that value, or else by default None
 mul()
 result=mul() # None value get stored to result var
@@ -24,7 +25,7 @@ result=mul() # None value get stored to result var
 
 # Positional arguments -
 
-def mul(a, b):
+def mul(a, b): # a and b are parameters which is used in defination of function
     print(a*b)
 mul(3, 4) # Here the arguments are 3, 4 and parameters are a, b where a gets assigned as 3 and b gets assigned as 4 based on the positions.
 mul(5, 2) # Here the arguments are 5, 2 and parameters are a, b where a gets assigned as 5 and b gets assigned as 2 based on the positions.
@@ -33,10 +34,10 @@ mul(5, 2) # Here the arguments are 5, 2 and parameters are a, b where a gets ass
 
 # Default arguments -
 
-def expo(a, b=9):
-    print(a*b)
-expo(5, 2) # Here the arguments are 5, 2 and parameters are a, b where a gets assigned as 5 and b gets assigned as 2, 2 replaced with 9 based on the positions.
-expo(2)# Here a value is 2 , b has default value 9, if not passing anything means use default value.
+def expo(a=9, b=9):
+    print(a*b) # function body
+expo(5,2) # Here the arguments are 5, 2 and parameters are a, b where a gets assigned as 5 and b gets assigned as 2, 2 replaced with 9 based on the positions.
+# Here a value is 2 , b has default value 9, if not passing anything means use default value.
 # [Note: In default argument, if default value assigned to parament in function itself, passing value through function is optional.
 #  If we pass it will use that value otherwise default value,]
 def add(a=10, b=20):
@@ -111,7 +112,7 @@ def mul_c():
     a=10
     b=20
     c=a*b 
-    print(c)
+    # print(c)
     return c # function can return only one value i.e output/result. 
  # If we are returning multiple value so it will considered as tuple
     
@@ -131,14 +132,19 @@ print()
 # with input with output- We are passing value to function, then function returns the output.
 def expo_c(a,b):
     print("With input with output")
-    return a**b
+    return a**b # 7**2
 
 c=expo_c(2,3) # store the output to var c
 # print(c)
 print(c, expo_c(3,4), expo_c(7,2), c*10)
+# expo_c - function name
+# expo_c(2, 3) #() you are calling that function that means after calling, go to the defination directly
+# 2 will store on a and 3 will store on b, will do function body work then back to calling of function
+# expo_c(7,2) with returned value
 # execution of line no. 136- first 134 executes then print(c, 8, 49, 80) before printing this it will executes body of the function
 # Body of the function it executes whenever we call the function.
-print("Apple", expo_c(4, 5), expo_c(2, 2), c)
+print("Apple", expo_c(4, 5), expo_c(2, 2), c+c)
+# output for print("Apple", 4**5, 2**2,8+8)
 
 ''' ------------------------------------------------------------------------------------------------------------------------------ '''
 
@@ -149,6 +155,8 @@ print("Apple", expo_c(4, 5), expo_c(2, 2), c)
 # it's like a anonymous class in java
 
 # For using lamba function, give a name to lambda function
+
+
 mul_l=lambda num, p:num*p
 print(mul_l(4,2))
 print(mul_l(9,2))
@@ -165,11 +173,11 @@ print(res)
 
 lst=[10,30,35,65,40,50]
 
-def fun(x):
-    if x%2==0:
-        return True
+def fun(x): 
+    if x%2!=0: 
+        return True # 10, 30, 40, 50
     else:
-        return False
+        return False # 35, 65
 print(list(filter(fun, lst)))
 
 # using lambda with filter function
@@ -178,8 +186,8 @@ print(list(filter(lambda x: x%2==0, lst))) # convert it into list.
 
 # reduce() it is present inside module functools
 
-def fun(x,y):
-    return x+y
+def fun(x,y): #[8, 9, 10, 20]
+    return x+y #x=8, y=9 next x=17 y=10 next
 print(reduce(fun, lst)) 
 # It gives addition of element
 
@@ -237,8 +245,3 @@ print(r1, r2)
 #     main()
 #  it will check main function if it is present then it will execute function from import module which is called under main()
 #   
-
-
-
-
-
