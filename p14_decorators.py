@@ -1,10 +1,11 @@
-def func(f, x):
-    return f(x) # return square(5)
+def func(f, x): # f=sqr, x=5
+    return f(x) # return square(5) # calling square(5)
+            # return 25
 
-def square(x):
-    return x*x
+def square(x): #x=5
+    return x*x # return 25
 
-res=func(square, 5)
+res=func(square, 5) # func- function object and funct() - function calling
 print(res)
 
 # here f is square , x is 5
@@ -17,19 +18,22 @@ print(res)
 # Decorator
 
 
-def outer_func(f):
+def outer_func(f): # f means ordinary
 
     def inner_func():
-        f() # f means ordinary()
+        f() # f means ordinary() then it will go to defination
         print("This is nested function")
-    return inner_func
+    return inner_func()
 
-@outer_func
+@outer_func 
 def ordinary():
     print("Normal")
 
 print(ordinary())
 
+# execution starts from line no. 31 then it will go to line no. 28 check for decorator if any 
+# it will go to the defination of function and pass that function as argument
+# outer_func(ordinary)
 # Most important powerful feature of python is everything is an object, including functions.
 
 # first class object
@@ -71,7 +75,7 @@ def fun(choice):
         return get_product
     
 choice=input("enter your choice") # choice is sum choosen by user
-fun1=fun(choice) # fun1 getsum
+fun1=fun(choice) # fun1=getsum # fun( choice) will replaced with get_sum coz fun(choice) return get_sum
 fun1([10,20,30,40]) # getsum([10, 20, 30, 40])
 fun2=fun('product')  # fun2=getproduct
 fun2([10,20,30,40]) # getproduct([10, 20, 30, 40])
@@ -82,8 +86,8 @@ def outer():
     print('Inside outer()')
 
     def inner():
-        print('Inside inner()')
-    inner()
+        print('Inside inner()') 
+    inner() # after line 86 it will go to line 90, from line 90 go to 88 
 
 # 2nd way
 def outer():
@@ -144,8 +148,7 @@ get_product([10, 0, 30])
 
 # Example2
 
-def outer(ref): # ref is div
-
+def outer(ref): # ref is div  # outer(div)
     def wrapper(a, b): # 10, 2
         if b==0:
             print('Please provide a non zero denominator')
@@ -154,9 +157,21 @@ def outer(ref): # ref is div
     return wrapper
 
 @outer # name of function 
-def div(a, b):
+def div(a, b): # first it will check is there any decorator, if decorator- go to the definaion and pass div as an argument to the decoration
     print(a/b)
 
 print(div(10, 2))
 # div(10,0)
 div(20, 30)
+
+# We can call function any no. of times. It will execute the complete function then leaves the control.
+# Execution always starts outer part of the function not inside, call the function outside of that function.
+# Whenever we call any function and if there is any decorator it will first go the defination of function and passed that function as an 
+# argument to the decorator 
+
+# whenever we call the function- it will immediately to the defination of function.
+
+
+
+
+
