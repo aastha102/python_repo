@@ -50,3 +50,32 @@ else:
 finally:
     print(f"Always execute") # It is always excute whether exception execute or not.
 # It is executed always like print 
+
+'''------------------------------------------------------------------------------------------------------------'''
+
+# custom exception handling
+class NegativeNumberError(Exception):
+    pass
+
+def check_num(n):
+    if n < 0:
+        raise NegativeNumberError("Negative numbers not allowed")
+
+try:
+    check_num(-10)
+except NegativeNumberError as e:
+    print(e)
+
+'''------------------------------------------------------------------------------------------------------------'''
+
+# Nested try except
+
+try:
+    x = int("abc")
+except ValueError:
+    try:
+        x = int(input("Enter a valid number: "))
+    except ValueError:
+        print("Still invalid input")
+
+
